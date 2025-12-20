@@ -1,9 +1,7 @@
-import 'package:e_commerce/features/presentation/screens/home/Root.dart';
-import 'package:e_commerce/features/presentation/screens/home/homeScreen.dart';
-import 'package:e_commerce/features/presentation/widgets/cart/CustomButtonToCheckout.dart';
-import 'package:e_commerce/features/presentation/widgets/payment/CenterTextWidget.dart';
-import 'package:e_commerce/features/presentation/widgets/payment/CustomContainerDeliveryStatus.dart';
-import 'package:e_commerce/features/presentation/widgets/payment/TrackOrderWidget.dart';
+import 'package:zimro/features/presentation/screens/home/Root.dart';
+import 'package:zimro/features/presentation/widgets/cart/CustomButtonToCheckout.dart';
+import 'package:zimro/features/presentation/widgets/payment/CenterTextWidget.dart';
+import 'package:zimro/features/presentation/widgets/payment/CustomContainerDeliveryStatus.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 

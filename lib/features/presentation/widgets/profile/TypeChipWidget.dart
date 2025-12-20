@@ -6,6 +6,7 @@ class TypeChip extends StatelessWidget {
   final VoidCallback onTap;
 
   const TypeChip({
+    super.key,
     required this.label,
     required this.selected,
     required this.onTap,

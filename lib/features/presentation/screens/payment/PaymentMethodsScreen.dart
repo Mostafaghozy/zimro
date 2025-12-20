@@ -1,7 +1,6 @@
-import 'package:e_commerce/features/presentation/screens/payment/ConfirmCardScreen.dart';
-import 'package:e_commerce/features/presentation/screens/payment/CreditCardScreen.dart';
-import 'package:e_commerce/features/presentation/screens/payment/PaymentOptionsScreen.dart';
-import 'package:e_commerce/features/presentation/widgets/payment/PaymentMethodCard.dart';
+import 'package:zimro/features/presentation/screens/payment/ConfirmCardScreen.dart';
+import 'package:zimro/features/presentation/screens/payment/PaymentOptionsScreen.dart';
+import 'package:zimro/features/presentation/widgets/payment/PaymentMethodCard.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -18,9 +17,6 @@ int selectedIndex = 0;
 final List<Map<String, dynamic>> _cards = [];
 
 class _PaymentMethodsPageState extends State<PaymentMethodsPage> {
-  // Whether the Add button should mark the new card as default
-  final bool _setNewAsDefault = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

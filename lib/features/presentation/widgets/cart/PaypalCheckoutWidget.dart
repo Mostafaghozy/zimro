@@ -1,8 +1,8 @@
-import 'package:e_commerce/features/data/models/paypal/amount_model/amount_model.dart';
-import 'package:e_commerce/features/data/models/paypal/amount_model/details.dart';
-import 'package:e_commerce/features/data/models/paypal/item_list_model/item.dart';
-import 'package:e_commerce/features/data/models/paypal/item_list_model/item_list_model.dart';
-import 'package:e_commerce/features/presentation/widgets/payment/executePaypalPayment.dart';
+import 'package:zimro/features/data/models/paypal/amount_model/amount_model.dart';
+import 'package:zimro/features/data/models/paypal/amount_model/details.dart';
+import 'package:zimro/features/data/models/paypal/item_list_model/item.dart';
+import 'package:zimro/features/data/models/paypal/item_list_model/item_list_model.dart';
+import 'package:zimro/features/presentation/widgets/payment/executePaypalPayment.dart';
 import 'package:flutter/material.dart';
 
 class PaypalCheckoutWidget extends StatelessWidget {

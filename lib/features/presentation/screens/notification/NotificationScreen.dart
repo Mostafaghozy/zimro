@@ -1,5 +1,5 @@
-import 'package:e_commerce/features/presentation/widgets/notification/ContainerWidgetNotification.dart';
-import 'package:e_commerce/features/presentation/widgets/notification/TextButtonMarkAllWidget.dart';
+import 'package:zimro/features/presentation/widgets/notification/ContainerWidgetNotification.dart';
+import 'package:zimro/features/presentation/widgets/notification/TextButtonMarkAllWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 

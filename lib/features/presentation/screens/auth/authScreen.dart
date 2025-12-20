@@ -1,8 +1,8 @@
-import 'package:e_commerce/features/presentation/cubit/login/login_cubit.dart';
-import 'package:e_commerce/features/presentation/widgets/imageCustom.dart';
-import 'package:e_commerce/features/presentation/widgets/auth/glass_button.dart';
-import 'package:e_commerce/features/presentation/screens/auth/loginScreen.dart';
-import 'package:e_commerce/features/presentation/screens/auth/signupScreen.dart';
+import 'package:zimro/features/presentation/cubit/login/login_cubit.dart';
+import 'package:zimro/features/presentation/widgets/imageCustom.dart';
+import 'package:zimro/features/presentation/widgets/auth/glass_button.dart';
+import 'package:zimro/features/presentation/screens/auth/loginScreen.dart';
+import 'package:zimro/features/presentation/screens/auth/signupScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

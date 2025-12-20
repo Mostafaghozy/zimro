@@ -1,13 +1,10 @@
-import 'package:e_commerce/features/presentation/screens/payment/PaymentMethodsScreen.dart';
-import 'package:e_commerce/features/presentation/screens/profile/GiveFeedbackScreen.dart';
-import 'package:e_commerce/features/presentation/screens/profile/MyOrderScreen.dart';
-import 'package:e_commerce/features/presentation/screens/profile/MyPaymentOption.dart';
-import 'package:e_commerce/features/presentation/widgets/CustomBottomNavBar.dart';
-import 'package:e_commerce/features/presentation/widgets/RowProfileWidget.dart';
-import 'package:e_commerce/features/presentation/screens/profile/PersonInformation/personalInformationScreen.dart';
-import 'package:e_commerce/features/presentation/screens/profile/address/addressBook.dart';
+import 'package:zimro/features/presentation/screens/profile/GiveFeedbackScreen.dart';
+import 'package:zimro/features/presentation/screens/profile/MyOrderScreen.dart';
+import 'package:zimro/features/presentation/screens/profile/MyPaymentOption.dart';
+import 'package:zimro/features/presentation/widgets/RowProfileWidget.dart';
+import 'package:zimro/features/presentation/screens/profile/PersonInformation/personalInformationScreen.dart';
+import 'package:zimro/features/presentation/screens/profile/address/addressBook.dart';
 
-import 'package:e_commerce/features/presentation/screens/home/Root.dart';
 import 'package:flutter/material.dart';
 
 class ProfileScreen extends StatelessWidget {

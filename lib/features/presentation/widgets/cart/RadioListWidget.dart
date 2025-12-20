@@ -36,8 +36,8 @@ class _PaymentSelectionScreenState extends State<PaymentSelectionScreen> {
             });
           },
 
-          fillColor: MaterialStateProperty.resolveWith<Color>((states) {
-            if (states.contains(MaterialState.selected)) {
+          fillColor: WidgetStateProperty.resolveWith<Color>((states) {
+            if (states.contains(WidgetState.selected)) {
               return Colors.yellow[600]!;
             }
             return Colors.yellow;
@@ -63,8 +63,8 @@ class _PaymentSelectionScreenState extends State<PaymentSelectionScreen> {
             });
           },
 
-          fillColor: MaterialStateProperty.resolveWith<Color>((states) {
-            if (states.contains(MaterialState.selected)) {
+          fillColor: WidgetStateProperty.resolveWith<Color>((states) {
+            if (states.contains(WidgetState.selected)) {
               return Colors.yellow[600]!;
             }
             return Colors.yellow;
@@ -90,8 +90,8 @@ class _PaymentSelectionScreenState extends State<PaymentSelectionScreen> {
             });
           },
 
-          fillColor: MaterialStateProperty.resolveWith<Color>((states) {
-            if (states.contains(MaterialState.selected)) {
+          fillColor: WidgetStateProperty.resolveWith<Color>((states) {
+            if (states.contains(WidgetState.selected)) {
               return Colors.yellow[600]!;
             }
             return Colors.yellow;

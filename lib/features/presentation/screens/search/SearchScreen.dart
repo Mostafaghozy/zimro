@@ -1,19 +1,13 @@
-import 'package:e_commerce/features/presentation/widgets/home/CustomListView.dart';
-import 'package:e_commerce/features/presentation/widgets/home/appbarCustomWidget.dart';
-import 'package:e_commerce/features/presentation/widgets/home/GridViewHorizontal.dart';
-import 'package:e_commerce/features/presentation/widgets/home/CardItem.dart';
-import 'package:e_commerce/features/presentation/widgets/search/RecentSearchWidget.dart';
-import 'package:e_commerce/features/presentation/widgets/search/ScanWidget.dart';
-import 'package:e_commerce/features/presentation/widgets/search/SearchWidget.dart';
-import 'package:e_commerce/features/presentation/widgets/category/category_item.dart';
-import 'package:e_commerce/features/presentation/widgets/category/category_list.dart';
-import 'package:e_commerce/features/presentation/widgets/search/section_title.dart';
-import 'package:e_commerce/features/presentation/widgets/home/sort_filter_bar.dart';
-import 'package:e_commerce/features/presentation/screens/search/SearchInputScreen.dart';
-import 'package:e_commerce/features/presentation/screens/search/SearchResultsScreen.dart';
-import 'package:e_commerce/features/presentation/screens/search/ScanScreen.dart';
+import 'package:zimro/features/presentation/widgets/home/CustomListView.dart';
+import 'package:zimro/features/presentation/widgets/home/appbarCustomWidget.dart';
+import 'package:zimro/features/presentation/widgets/home/GridViewHorizontal.dart';
+import 'package:zimro/features/presentation/widgets/search/RecentSearchWidget.dart';
+import 'package:zimro/features/presentation/widgets/search/SearchWidget.dart';
+import 'package:zimro/features/presentation/widgets/category/category_item.dart';
+import 'package:zimro/features/presentation/widgets/category/category_list.dart';
+import 'package:zimro/features/presentation/widgets/search/section_title.dart';
+import 'package:zimro/features/presentation/widgets/home/sort_filter_bar.dart';
 
-import 'package:e_commerce/features/data/services/SearchHistoryService.dart';
 import 'package:flutter/material.dart';
 
 class SearchScreen extends StatefulWidget {

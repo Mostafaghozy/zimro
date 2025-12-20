@@ -1,5 +1,5 @@
-import 'package:e_commerce/features/presentation/screens/payment/PaymentMethodsScreen.dart';
-import 'package:e_commerce/features/presentation/widgets/RowProfileWidget.dart';
+import 'package:zimro/features/presentation/screens/payment/PaymentMethodsScreen.dart';
+import 'package:zimro/features/presentation/widgets/RowProfileWidget.dart';
 import 'package:flutter/material.dart';
 
 class MyPaymentOption extends StatelessWidget {

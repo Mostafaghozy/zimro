@@ -1,12 +1,10 @@
-import 'dart:ui';
-
 import 'package:dio/dio.dart';
-import 'package:e_commerce/core/api_keys.dart';
-import 'package:e_commerce/features/data/models/stripe/ephemeral_key_model/ephemeral_key_model.dart';
-import 'package:e_commerce/features/data/models/stripe/init_payment_sheet_input_model.dart';
-import 'package:e_commerce/features/data/models/stripe/payment_intent_input_model.dart';
-import 'package:e_commerce/features/data/models/stripe/payment_intent_model/payment_intent_model.dart';
-import 'package:e_commerce/features/data/services/api_service.dart';
+import 'package:zimro/core/api_keys.dart';
+import 'package:zimro/features/data/models/stripe/ephemeral_key_model/ephemeral_key_model.dart';
+import 'package:zimro/features/data/models/stripe/init_payment_sheet_input_model.dart';
+import 'package:zimro/features/data/models/stripe/payment_intent_input_model.dart';
+import 'package:zimro/features/data/models/stripe/payment_intent_model/payment_intent_model.dart';
+import 'package:zimro/features/data/services/api_service.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 
 class StripeService {

@@ -1,4 +1,4 @@
-import 'package:e_commerce/features/presentation/widgets/home/CardItem.dart';
+import 'package:zimro/features/presentation/widgets/home/CardItem.dart';
 import 'package:flutter/cupertino.dart';
 
 class CustomListView extends StatelessWidget {

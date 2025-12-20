@@ -1,9 +1,7 @@
-import 'package:e_commerce/features/presentation/widgets/CustomBottomNavBar.dart';
-import 'package:e_commerce/features/presentation/widgets/review/CustomTextFormField.dart';
-import 'package:e_commerce/features/presentation/widgets/review/review_action_buttons.dart';
-import 'package:e_commerce/features/presentation/widgets/review/review_rating.dart';
-import 'package:e_commerce/features/presentation/widgets/review/review_service.dart';
-import 'package:e_commerce/features/presentation/screens/home/Root.dart';
+import 'package:zimro/features/presentation/widgets/review/CustomTextFormField.dart';
+import 'package:zimro/features/presentation/widgets/review/review_action_buttons.dart';
+import 'package:zimro/features/presentation/widgets/review/review_rating.dart';
+import 'package:zimro/features/presentation/widgets/review/review_service.dart';
 
 import 'package:flutter/material.dart';
 

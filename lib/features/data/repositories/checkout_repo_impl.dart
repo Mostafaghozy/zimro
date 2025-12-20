@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:e_commerce/core/errors/failures.dart';
-import 'package:e_commerce/features/data/models/stripe/payment_intent_input_model.dart';
-import 'package:e_commerce/features/data/repositories/checkout_repo.dart';
-import 'package:e_commerce/features/data/services/stripe_service.dart';
+import 'package:zimro/core/errors/failures.dart';
+import 'package:zimro/features/data/models/stripe/payment_intent_input_model.dart';
+import 'package:zimro/features/data/repositories/checkout_repo.dart';
+import 'package:zimro/features/data/services/stripe_service.dart';
 import 'package:flutter_stripe/flutter_stripe.dart';
 
 class CheckoutRepoImpl extends CheckoutRepo {

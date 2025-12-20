@@ -1,4 +1,4 @@
-import 'package:e_commerce/features/presentation/widgets/custom_input_field.dart';
+import 'package:zimro/features/presentation/widgets/custom_input_field.dart';
 import 'package:flutter/material.dart';
 
 class AddPayPalScreen extends StatelessWidget {

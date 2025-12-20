@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:e_commerce/features/presentation/widgets/payment/CardActionSheet.dart';
+import 'package:zimro/features/presentation/widgets/payment/CardActionSheet.dart';
 import 'package:gap/gap.dart';
 
 class PaymentMethodCard extends StatelessWidget {

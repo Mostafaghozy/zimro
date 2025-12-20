@@ -1,22 +1,16 @@
-import 'package:e_commerce/features/data/models/stripe/payment_intent_input_model.dart';
-import 'package:e_commerce/features/data/repositories/checkout_repo_impl.dart';
-import 'package:e_commerce/features/presentation/cubit/stripe/stripe_payment_cubit.dart';
-import 'package:e_commerce/features/presentation/screens/payment/PaymentSuccess.dart';
-import 'package:e_commerce/features/presentation/widgets/cart/ComtainerChangeAddressWidget.dart';
-import 'package:e_commerce/features/presentation/widgets/cart/ContainerPayWidget.dart';
-import 'package:e_commerce/features/presentation/widgets/cart/CountryDropdown.dart';
+import 'package:zimro/features/data/models/stripe/payment_intent_input_model.dart';
+import 'package:zimro/features/data/repositories/checkout_repo_impl.dart';
+import 'package:zimro/features/presentation/cubit/stripe/stripe_payment_cubit.dart';
+import 'package:zimro/features/presentation/screens/payment/PaymentSuccess.dart';
+import 'package:zimro/features/presentation/widgets/cart/ComtainerChangeAddressWidget.dart';
+import 'package:zimro/features/presentation/widgets/cart/ContainerPayWidget.dart';
 
-import 'package:e_commerce/features/presentation/widgets/cart/CustomButtonToCheckout.dart';
-import 'package:e_commerce/features/presentation/widgets/cart/CustomRowTotalCheck.dart';
-import 'package:e_commerce/features/presentation/widgets/cart/FormFieldCustom.dart';
-import 'package:e_commerce/features/presentation/widgets/cart/PaypalCheckoutWidget.dart';
-import 'package:e_commerce/features/presentation/widgets/cart/RadioListWidget.dart';
-import 'package:e_commerce/features/presentation/widgets/cart/RowTwoDividersWidget.dart';
-import 'package:e_commerce/features/presentation/widgets/cart/ZipCodeContainer.dart';
+import 'package:zimro/features/presentation/widgets/cart/CustomButtonToCheckout.dart';
+import 'package:zimro/features/presentation/widgets/cart/CustomRowTotalCheck.dart';
+import 'package:zimro/features/presentation/widgets/cart/PaypalCheckoutWidget.dart';
+import 'package:zimro/features/presentation/widgets/cart/RowTwoDividersWidget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_stripe/flutter_stripe.dart';
 import 'package:gap/gap.dart';
 
 class CheckoutScreen extends StatelessWidget {

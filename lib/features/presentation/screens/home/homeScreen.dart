@@ -1,20 +1,16 @@
-import 'package:e_commerce/features/presentation/widgets/CartNotificationBottomSheet.dart';
-import 'package:e_commerce/features/presentation/widgets/home/CollectionsFilterBar.dart';
-import 'package:e_commerce/features/presentation/widgets/home/ContainerCustomWidget.dart';
-import 'package:e_commerce/features/presentation/widgets/home/CustomListView.dart';
-import 'package:e_commerce/features/presentation/widgets/home/HomeFilterSheet.dart';
-import 'package:e_commerce/features/presentation/widgets/home/GridViewVertical.dart';
-import 'package:e_commerce/features/presentation/widgets/home/WelcomeHeader.dart';
-import 'package:e_commerce/features/presentation/widgets/home/appbarCustomWidget.dart';
-import 'package:e_commerce/features/presentation/widgets/home/GridViewHorizontal.dart';
-import 'package:e_commerce/features/presentation/widgets/home/CardItem.dart';
+import 'package:zimro/features/presentation/widgets/CartNotificationBottomSheet.dart';
+import 'package:zimro/features/presentation/widgets/home/ContainerCustomWidget.dart';
+import 'package:zimro/features/presentation/widgets/home/CustomListView.dart';
+import 'package:zimro/features/presentation/widgets/home/GridViewVertical.dart';
+import 'package:zimro/features/presentation/widgets/home/WelcomeHeader.dart';
+import 'package:zimro/features/presentation/widgets/home/appbarCustomWidget.dart';
+import 'package:zimro/features/presentation/widgets/home/GridViewHorizontal.dart';
 
-import 'package:e_commerce/features/presentation/widgets/home/seeAllWidget.dart';
-import 'package:e_commerce/features/presentation/screens/home/AllProductScreen.dart';
-import 'package:e_commerce/features/presentation/screens/home/Root.dart';
+import 'package:zimro/features/presentation/widgets/home/seeAllWidget.dart';
+import 'package:zimro/features/presentation/screens/home/AllProductScreen.dart';
+import 'package:zimro/features/presentation/screens/home/Root.dart';
 
-import 'package:e_commerce/features/presentation/widgets/home/CustomFilterWidget.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:zimro/features/presentation/widgets/home/CustomFilterWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 

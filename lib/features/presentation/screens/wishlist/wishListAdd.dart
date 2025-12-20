@@ -1,5 +1,5 @@
-import 'package:e_commerce/features/presentation/widgets/wishList/ContainerWishList.dart';
-import 'package:e_commerce/features/presentation/widgets/wishList/TopWishListWidget.dart';
+import 'package:zimro/features/presentation/widgets/wishList/ContainerWishList.dart';
+import 'package:zimro/features/presentation/widgets/wishList/TopWishListWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 

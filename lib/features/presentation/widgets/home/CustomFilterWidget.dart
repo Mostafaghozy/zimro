@@ -1,5 +1,5 @@
-import 'package:e_commerce/features/presentation/widgets/home/CollectionsFilterBar.dart';
-import 'package:e_commerce/features/presentation/widgets/home/HomeFilterSheet.dart';
+import 'package:zimro/features/presentation/widgets/home/CollectionsFilterBar.dart';
+import 'package:zimro/features/presentation/widgets/home/HomeFilterSheet.dart';
 import 'package:flutter/material.dart';
 
 class CustomFilterWidget extends StatelessWidget {

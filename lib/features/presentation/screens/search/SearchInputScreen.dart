@@ -1,6 +1,5 @@
-import 'package:e_commerce/features/presentation/widgets/home/appbarCustomWidget.dart';
-import 'package:e_commerce/features/presentation/screens/search/SearchResultsScreen.dart';
-import 'package:e_commerce/features/data/services/SearchHistoryService.dart';
+import 'package:zimro/features/presentation/widgets/home/appbarCustomWidget.dart';
+import 'package:zimro/features/data/services/SearchHistoryService.dart';
 import 'package:flutter/material.dart';
 
 class SearchInputScreen extends StatefulWidget {

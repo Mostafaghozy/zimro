@@ -1,6 +1,5 @@
-import 'package:e_commerce/features/presentation/screens/home/Root.dart';
-import 'package:e_commerce/features/presentation/widgets/imageCustom.dart';
-import 'package:e_commerce/features/presentation/screens/auth/authScreen.dart';
+import 'package:zimro/features/presentation/screens/home/Root.dart';
+import 'package:zimro/features/presentation/widgets/imageCustom.dart';
 import 'package:flutter/material.dart';
 
 class SplashScreen extends StatefulWidget {

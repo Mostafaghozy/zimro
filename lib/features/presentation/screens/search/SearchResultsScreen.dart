@@ -1,12 +1,12 @@
-// import 'package:e_commerce/features/presentation/widgets/CustomBottomNavBar.dart';
-// import 'package:e_commerce/features/presentation/widgets/appbarCustomWidget.dart';
-// import 'package:e_commerce/features/presentation/widgets/category/HorizontalProductList.dart';
-// import 'package:e_commerce/features/presentation/widgets/category/ProductCardGrid.dart';
-// import 'package:e_commerce/features/presentation/widgets/category/SortBySheet.dart';
-// import 'package:e_commerce/features/presentation/widgets/category/sort_filter_bar.dart';
-// import 'package:e_commerce/features/presentation/screens/home/Root.dart';
+// import 'package:zimro/features/presentation/widgets/CustomBottomNavBar.dart';
+// import 'package:zimro/features/presentation/widgets/appbarCustomWidget.dart';
+// import 'package:zimro/features/presentation/widgets/category/HorizontalProductList.dart';
+// import 'package:zimro/features/presentation/widgets/category/ProductCardGrid.dart';
+// import 'package:zimro/features/presentation/widgets/category/SortBySheet.dart';
+// import 'package:zimro/features/presentation/widgets/category/sort_filter_bar.dart';
+// import 'package:zimro/features/presentation/screens/home/Root.dart';
 
-// import 'package:e_commerce/features/data/services/ProductDataService.dart';
+// import 'package:zimro/features/data/services/ProductDataService.dart';
 // import 'package:flutter/material.dart';
 
 // class SearchResultsScreen extends StatefulWidget {

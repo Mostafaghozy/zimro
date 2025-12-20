@@ -1,17 +1,12 @@
-import 'package:e_commerce/core/api_keys.dart';
-import 'package:e_commerce/features/data/models/paypal/amount_model/amount_model.dart';
-import 'package:e_commerce/features/data/models/paypal/amount_model/details.dart';
-import 'package:e_commerce/features/data/models/paypal/item_list_model/item.dart';
-import 'package:e_commerce/features/data/models/paypal/item_list_model/item_list_model.dart';
-import 'package:e_commerce/features/presentation/widgets/CustomBottomNavBar.dart';
-import 'package:e_commerce/features/presentation/widgets/payment/PaymentOptionsWidget.dart';
-import 'package:e_commerce/features/presentation/screens/home/Root.dart';
-import 'package:e_commerce/features/presentation/screens/payment/add_paypal_screen.dart';
+import 'package:zimro/features/data/models/paypal/amount_model/amount_model.dart';
+import 'package:zimro/features/data/models/paypal/amount_model/details.dart';
+import 'package:zimro/features/data/models/paypal/item_list_model/item.dart';
+import 'package:zimro/features/data/models/paypal/item_list_model/item_list_model.dart';
+import 'package:zimro/features/presentation/widgets/payment/PaymentOptionsWidget.dart';
 
-import 'package:e_commerce/features/presentation/screens/payment/CreditCardScreen.dart';
-import 'package:e_commerce/features/presentation/widgets/payment/executePaypalPayment.dart';
+import 'package:zimro/features/presentation/screens/payment/CreditCardScreen.dart';
+import 'package:zimro/features/presentation/widgets/payment/executePaypalPayment.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_paypal_payment/flutter_paypal_payment.dart';
 
 class PaymentOptionsScreen extends StatefulWidget {
   const PaymentOptionsScreen({super.key});

@@ -1,9 +1,9 @@
-import 'package:e_commerce/features/presentation/widgets/cart/ContainerOrderCart.dart';
-import 'package:e_commerce/features/presentation/widgets/cart/CustomButtonToCheckout.dart';
-import 'package:e_commerce/features/presentation/screens/cart/CheckoutScreen.dart';
-import 'package:e_commerce/features/presentation/widgets/cart/CustomRowTotalCheck.dart';
-import 'package:e_commerce/features/presentation/widgets/cart/DashedLineWithContainer.dart';
-import 'package:e_commerce/features/presentation/widgets/cart/promoCodeWidget.dart';
+import 'package:zimro/features/presentation/widgets/cart/ContainerOrderCart.dart';
+import 'package:zimro/features/presentation/widgets/cart/CustomButtonToCheckout.dart';
+import 'package:zimro/features/presentation/screens/cart/CheckoutScreen.dart';
+import 'package:zimro/features/presentation/widgets/cart/CustomRowTotalCheck.dart';
+import 'package:zimro/features/presentation/widgets/cart/DashedLineWithContainer.dart';
+import 'package:zimro/features/presentation/widgets/cart/promoCodeWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 

@@ -1,9 +1,6 @@
-import 'dart:math';
-
 import 'package:bloc/bloc.dart';
-import 'package:e_commerce/features/data/models/stripe/payment_intent_input_model.dart';
-import 'package:e_commerce/features/data/repositories/checkout_repo_impl.dart';
-import 'package:e_commerce/features/data/repositories/checkout_repo.dart';
+import 'package:zimro/features/data/models/stripe/payment_intent_input_model.dart';
+import 'package:zimro/features/data/repositories/checkout_repo.dart';
 import 'package:meta/meta.dart';
 
 part 'stripe_payment_state.dart';

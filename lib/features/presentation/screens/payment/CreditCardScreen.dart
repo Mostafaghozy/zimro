@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
-import 'package:e_commerce/features/presentation/widgets/payment/CreditCardPreview.dart';
-import 'package:e_commerce/features/presentation/widgets/payment/CreditCardFormWidget.dart';
-import 'package:e_commerce/features/presentation/widgets/payment/DefaultPaymentRow.dart';
-import 'package:e_commerce/features/presentation/widgets/payment/AddPaymentButton.dart';
+import 'package:zimro/features/presentation/widgets/payment/CreditCardPreview.dart';
+import 'package:zimro/features/presentation/widgets/payment/CreditCardFormWidget.dart';
+import 'package:zimro/features/presentation/widgets/payment/DefaultPaymentRow.dart';
+import 'package:zimro/features/presentation/widgets/payment/AddPaymentButton.dart';
 
 /// CardDetailsScreen (uses extracted widgets)
 class CardDetailsScreen extends StatefulWidget {
@@ -23,7 +23,7 @@ class _CardDetailsScreenState extends State<CardDetailsScreen> {
   String _cardHolderName = 'Fashion App';
   String _cvvCode = '';
   bool _isCvvFocused = false;
-  bool _useBackgroundImage = true;
+  final bool _useBackgroundImage = true;
   bool _isDefaultPayment = true;
 
   // Form key forwarded to the package form widget

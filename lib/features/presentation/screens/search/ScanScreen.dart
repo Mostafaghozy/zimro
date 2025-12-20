@@ -1,5 +1,5 @@
 // import 'package:camera/camera.dart';
-// import 'package:e_commerce/features/presentation/screens/search/SearchResultsScreen.dart';
+// import 'package:zimro/features/presentation/screens/search/SearchResultsScreen.dart';
 // import 'package:flutter/material.dart';
 // import 'package:permission_handler/permission_handler.dart';
 

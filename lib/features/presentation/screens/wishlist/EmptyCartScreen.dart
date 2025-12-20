@@ -1,4 +1,4 @@
-import 'package:e_commerce/features/presentation/widgets/wishList/TopWishListWidget.dart';
+import 'package:zimro/features/presentation/widgets/wishList/TopWishListWidget.dart';
 import 'package:flutter/material.dart';
 
 class EmptyCartScreen extends StatelessWidget {

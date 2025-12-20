@@ -1,9 +1,10 @@
-import 'package:e_commerce/features/presentation/screens/auth/confirmScreen.dart';
-import 'package:e_commerce/features/presentation/screens/auth/loginScreen.dart';
-import 'package:e_commerce/features/presentation/widgets/auth/ButtonContinueWithEmail.dart';
-import 'package:e_commerce/features/presentation/widgets/auth/ButtonLoginWith.dart';
-import 'package:e_commerce/features/presentation/widgets/custom_input_field.dart';
+import 'package:zimro/features/presentation/cubit/login/login_cubit.dart';
+import 'package:zimro/features/presentation/screens/auth/loginScreen.dart';
+import 'package:zimro/features/presentation/widgets/auth/ButtonContinueWithEmail.dart';
+import 'package:zimro/features/presentation/widgets/auth/ButtonLoginWith.dart';
+import 'package:zimro/features/presentation/widgets/custom_input_field.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SignUpScreen extends StatefulWidget {
   const SignUpScreen({super.key});
@@ -33,14 +34,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.only(left: 10, right: 10, top: 100),
+        padding: const EdgeInsets.only(left: 10, right: 10, top: 60),
         child: SingleChildScrollView(
           physics: AlwaysScrollableScrollPhysics(),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
 
             children: [
+              IconButton(
+                icon: const Icon(
+                  Icons.arrow_back_ios_sharp,
+                  size: 25,
+                  color: Color.fromARGB(255, 192, 187, 37),
+                ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
               Center(child: Image.asset('assets/logo.png')),
               const SizedBox(height: 60),
 
@@ -89,7 +99,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => LogInScreen()),
+                        MaterialPageRoute(
+                          builder: (context) => BlocProvider(
+                            create: (context) => LoginCubit(),
+                            child: LogInScreen(),
+                          ),
+                        ),
                       );
                     },
                     child: Text(

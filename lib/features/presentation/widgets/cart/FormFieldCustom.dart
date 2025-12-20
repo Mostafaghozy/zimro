@@ -1,4 +1,4 @@
-import 'package:e_commerce/features/presentation/widgets/cart/CreditCardNumberFormatter.dart';
+import 'package:zimro/features/presentation/widgets/cart/CreditCardNumberFormatter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

@@ -1,5 +1,5 @@
-import 'package:e_commerce/features/presentation/widgets/cart/RowCart.dart';
-import 'package:e_commerce/features/presentation/widgets/cart/quantityWidget.dart';
+import 'package:zimro/features/presentation/widgets/cart/RowCart.dart';
+import 'package:zimro/features/presentation/widgets/cart/quantityWidget.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 

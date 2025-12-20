@@ -1,5 +1,5 @@
-import 'package:e_commerce/features/presentation/widgets/RowProfileWidget.dart';
-import 'package:e_commerce/features/presentation/screens/profile/PersonInformation/edit_personal_info.dart';
+import 'package:zimro/features/presentation/widgets/RowProfileWidget.dart';
+import 'package:zimro/features/presentation/screens/profile/PersonInformation/edit_personal_info.dart';
 
 import 'package:flutter/material.dart';
 

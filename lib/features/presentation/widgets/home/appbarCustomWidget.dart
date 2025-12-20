@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:e_commerce/features/presentation/screens/profile/profileScreen.dart';
+import 'package:zimro/features/presentation/screens/profile/profileScreen.dart';
 
 class AppBarCustomWidget extends StatelessWidget
     implements PreferredSizeWidget {

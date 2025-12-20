@@ -1,9 +1,9 @@
-import 'package:e_commerce/features/presentation/screens/cart/CartScreen.dart';
-import 'package:e_commerce/features/presentation/screens/home/AllProductScreen.dart';
-import 'package:e_commerce/features/presentation/screens/home/homeScreen.dart';
-import 'package:e_commerce/features/presentation/screens/notification/NotificationScreen.dart';
-import 'package:e_commerce/features/presentation/screens/search/SearchScreen.dart';
-import 'package:e_commerce/features/presentation/screens/wishlist/WishListScreen.dart';
+import 'package:zimro/features/presentation/screens/cart/CartScreen.dart';
+import 'package:zimro/features/presentation/screens/home/AllProductScreen.dart';
+import 'package:zimro/features/presentation/screens/home/homeScreen.dart';
+import 'package:zimro/features/presentation/screens/notification/NotificationScreen.dart';
+import 'package:zimro/features/presentation/screens/search/SearchScreen.dart';
+import 'package:zimro/features/presentation/screens/wishlist/WishListScreen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

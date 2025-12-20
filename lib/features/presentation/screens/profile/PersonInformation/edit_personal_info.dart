@@ -1,7 +1,5 @@
-import 'package:e_commerce/features/presentation/widgets/CustomBottomNavBar.dart';
-import 'package:e_commerce/features/presentation/widgets/cart/CustomButtonToCheckout.dart';
-import 'package:e_commerce/features/presentation/widgets/custom_input_field.dart';
-import 'package:e_commerce/features/presentation/screens/home/Root.dart';
+import 'package:zimro/features/presentation/widgets/cart/CustomButtonToCheckout.dart';
+import 'package:zimro/features/presentation/widgets/custom_input_field.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

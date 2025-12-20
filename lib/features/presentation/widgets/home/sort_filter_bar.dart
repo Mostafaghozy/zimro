@@ -1,5 +1,5 @@
-import 'package:e_commerce/features/presentation/widgets/home/HomeFilterSheet.dart';
-import 'package:e_commerce/features/presentation/widgets/category/SortBySheet.dart';
+import 'package:zimro/features/presentation/widgets/home/HomeFilterSheet.dart';
+import 'package:zimro/features/presentation/widgets/category/SortBySheet.dart';
 
 import 'package:flutter/material.dart';
 

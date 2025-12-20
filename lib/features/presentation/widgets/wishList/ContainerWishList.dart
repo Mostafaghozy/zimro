@@ -1,4 +1,4 @@
-import 'package:e_commerce/features/presentation/widgets/wishList/StaticStarRating.dart';
+import 'package:zimro/features/presentation/widgets/wishList/StaticStarRating.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 

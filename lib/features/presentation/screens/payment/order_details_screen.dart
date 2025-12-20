@@ -1,10 +1,8 @@
-import 'package:e_commerce/features/presentation/widgets/CustomBottomNavBar.dart';
-import 'package:e_commerce/features/presentation/widgets/order/CustomButtonOrderInfo.dart';
-import 'package:e_commerce/features/presentation/widgets/order/buildDeliveryInfo.dart';
-import 'package:e_commerce/features/presentation/widgets/order/buildOrderInfo.dart';
-import 'package:e_commerce/features/presentation/widgets/order/buildPaymentInfo.dart';
-import 'package:e_commerce/features/presentation/widgets/order/buildProductItem.dart';
-import 'package:e_commerce/features/presentation/screens/home/Root.dart';
+import 'package:zimro/features/presentation/widgets/order/CustomButtonOrderInfo.dart';
+import 'package:zimro/features/presentation/widgets/order/buildDeliveryInfo.dart';
+import 'package:zimro/features/presentation/widgets/order/buildOrderInfo.dart';
+import 'package:zimro/features/presentation/widgets/order/buildPaymentInfo.dart';
+import 'package:zimro/features/presentation/widgets/order/buildProductItem.dart';
 
 import 'package:flutter/material.dart';
 
