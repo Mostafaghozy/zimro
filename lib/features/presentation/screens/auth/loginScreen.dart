@@ -47,18 +47,23 @@ class _LogInScreenState extends State<LogInScreen> {
             child: SingleChildScrollView(
               physics: AlwaysScrollableScrollPhysics(),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
 
                 children: [
-                  IconButton(
-                    icon: const Icon(
-                      Icons.arrow_back_ios_sharp,
-                      size: 25,
-                      color: Color.fromARGB(255, 192, 187, 37),
-                    ),
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      IconButton(
+                        icon: const Icon(
+                          Icons.arrow_back_ios_sharp,
+                          size: 25,
+                          color: Color.fromARGB(255, 192, 187, 37),
+                        ),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                      ),
+                    ],
                   ),
                   Center(child: Image.asset('assets/logo.png')),
                   const SizedBox(height: 60),
@@ -81,7 +86,7 @@ class _LogInScreenState extends State<LogInScreen> {
                   ),
                   const SizedBox(height: 20),
                   state is LoginLoading
-                      ? CircularProgressIndicator()
+                      ? const CircularProgressIndicator()
                       : ButtonContinueWithEmail(
                           emailController: emailController,
                           passwordController: passwordController,

@@ -1,12 +1,12 @@
-class Register {
+class SignUpModel {
   String? email;
   String? password;
   String? firstName;
   String? lastName;
 
-  Register({this.email, this.password, this.firstName, this.lastName});
+  SignUpModel({this.email, this.password, this.firstName, this.lastName});
 
-  factory Register.fromJson(Map<String, dynamic> json) => Register(
+  factory SignUpModel.fromJson(Map<String, dynamic> json) => SignUpModel(
     email: json['email'] as String?,
     password: json['password'] as String?,
     firstName: json['firstName'] as String?,
