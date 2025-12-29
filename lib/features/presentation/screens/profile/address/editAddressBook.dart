@@ -2,7 +2,7 @@ import 'package:zimro/features/presentation/widgets/profile/TypeChipWidget.dart'
 import 'package:flutter/cupertino.dart';
 
 import 'package:flutter/material.dart';
-import '../../../widgets/custom_input_field.dart';
+import '../../../widgets/auth/custom_input_field.dart';
 
 class EditAddressBook extends StatefulWidget {
   const EditAddressBook({super.key});

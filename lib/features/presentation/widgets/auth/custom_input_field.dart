@@ -12,6 +12,7 @@ class CustomInputField extends StatelessWidget {
   final Widget? child;
   final double? radius;
   final String? errorText;
+  final double? width;
 
   const CustomInputField({
     super.key,
@@ -26,12 +27,14 @@ class CustomInputField extends StatelessWidget {
     this.child,
     this.radius,
     this.errorText,
+    this.width,
   });
 
   @override
   Widget build(BuildContext context) {
-    // Render label inside the container (not floating) for both text and custom child.
     return Container(
+      width: width ?? double.infinity,
+
       decoration: BoxDecoration(
         border: Border.all(color: Colors.grey[600]!),
         borderRadius: BorderRadius.circular(radius ?? 8),

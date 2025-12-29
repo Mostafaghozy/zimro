@@ -1,26 +1,47 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:zimro/features/data/models/auth/SignUp_model.dart';
+
 import 'package:zimro/features/data/models/auth/login_model.dart';
+import 'package:zimro/features/data/models/auth/sign_up_model.dart';
 import 'package:zimro/features/presentation/cubit/sign_up/SignUp_state.dart';
 
 class SignUpCubit extends Cubit<SignUpState> {
   SignUpCubit() : super(SignUpInitial());
 
-  Future<void> signUp({required String email, required String password}) async {
+  Future<void> signUp({
+    required String email,
+    required String password,
+    required String confirmPassword,
+  }) async {
     try {
       emit(SignUpLoading());
-      final signUpModel = SignUpModel(email: email, password: password);
 
-      final response = await Dio().post(
+      final signUpModel = SignUpModel(
+        email: email,
+        password: password,
+        confirmPassword: confirmPassword,
+        firstName: "User",
+        lastName: "User",
+      );
+
+      await Dio().post(
         "https://accessories-eshop.runasp.net/api/auth/register",
         data: signUpModel.toJson(),
       );
+
       emit(SignUpSuccess());
-      print(response);
     } catch (e) {
-      emit(SignUpFailure(errMessage: e.toString()));
-      print(e.toString());
+      if (e is DioException) {
+        final errorResponse = e.response?.data;
+        final errorMessage =
+            errorResponse?['message'] ??
+            errorResponse?['errors']?.toString() ??
+            'Unknown error occurred';
+
+        emit(SignUpFailure(errMessage: errorMessage));
+      } else {
+        emit(SignUpFailure(errMessage: e.toString()));
+      }
     }
   }
 }

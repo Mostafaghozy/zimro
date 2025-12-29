@@ -4,7 +4,9 @@ import 'package:zimro/features/presentation/cubit/sign_up/SignUp_state.dart';
 import 'package:zimro/features/presentation/screens/auth/loginScreen.dart';
 import 'package:zimro/features/presentation/widgets/auth/ButtonContinueWithEmail.dart';
 import 'package:zimro/features/presentation/widgets/auth/ButtonLoginWith.dart';
-import 'package:zimro/features/presentation/widgets/custom_input_field.dart';
+import 'package:zimro/features/presentation/widgets/auth/ButtonSignUp.dart';
+import 'package:zimro/features/presentation/widgets/auth/PasswordField.dart';
+import 'package:zimro/features/presentation/widgets/auth/custom_input_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -36,14 +38,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
   Widget build(BuildContext context) {
     return BlocConsumer<SignUpCubit, SignUpState>(
       listener: (context, state) {
+        if (state is SignUpFailure) {
+          ScaffoldMessenger.of(
+            context,
+          ).showSnackBar(SnackBar(content: Text(state.errMessage)));
+        }
         if (state is SignUpSuccess) {
           ScaffoldMessenger.of(
             context,
-          ).showSnackBar(SnackBar(content: Text(("success"))));
-        } else if (state is SignUpFailure) {
-          ScaffoldMessenger.of(
-            context,
-          ).showSnackBar(SnackBar(content: Text((state.errMessage))));
+          ).showSnackBar(SnackBar(content: Text("Sign Up Successful")));
         }
       },
       builder: (context, state) {
@@ -68,6 +71,27 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   Center(child: Image.asset('assets/logo.png')),
                   const SizedBox(height: 60),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CustomInputField(
+                        width: (MediaQuery.of(context).size.width - 40) / 2,
+                        label: 'First Name',
+                        radius: 10,
+                        keyboardType: TextInputType.name,
+                        obscureText: true,
+                      ),
+
+                      CustomInputField(
+                        width: (MediaQuery.of(context).size.width - 40) / 2,
+                        label: 'Last Name',
+                        radius: 10,
+                        keyboardType: TextInputType.name,
+                        obscureText: true,
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 10),
 
                   CustomInputField(
                     label: 'Email',
@@ -75,16 +99,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     radius: 10,
                     keyboardType: TextInputType.emailAddress,
                   ),
-                  const SizedBox(height: 20),
-                  CustomInputField(
+                  const SizedBox(height: 10),
+                  PasswordField(
                     label: 'Password',
                     controller: passwordController,
-                    radius: 10,
-                    keyboardType: TextInputType.visiblePassword,
-                    obscureText: true,
-                    errorText: passwordError,
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 10),
                   CustomInputField(
                     label: 'Confirm Password',
                     controller: confirmPasswordController,
@@ -93,13 +113,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     obscureText: true,
                     errorText: confirmPasswordError,
                   ),
+
                   const SizedBox(height: 20),
-                  state is SignUpLoading
-                      ? const CircularProgressIndicator()
-                      : ButtonContinueWithEmail(
-                          emailController: emailController,
-                          passwordController: passwordController,
-                        ),
+                  ButtonSignUp(
+                    emailController: emailController,
+                    passwordController: passwordController,
+                    confirmPasswordController: confirmPasswordController,
+                    isLoading: state is SignUpLoading,
+                    onSignUp: (email, password, confirmPassword) {
+                      context.read<SignUpCubit>().signUp(
+                        email: email,
+                        password: password,
+                        confirmPassword: confirmPassword,
+                      );
+                    },
+                  ),
 
                   const SizedBox(height: 10),
                   Row(

@@ -1,4 +1,5 @@
 import 'package:zimro/features/presentation/cubit/login/login_cubit.dart';
+import 'package:zimro/features/presentation/cubit/sign_up/SignUp_Cubit.dart';
 import 'package:zimro/features/presentation/widgets/imageCustom.dart';
 import 'package:zimro/features/presentation/widgets/auth/glass_button.dart';
 import 'package:zimro/features/presentation/screens/auth/loginScreen.dart';
@@ -50,7 +51,12 @@ class AuthScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (context) => SignUpScreen()),
+                      MaterialPageRoute(
+                        builder: (context) => BlocProvider(
+                          create: (_) => SignUpCubit(),
+                          child: SignUpScreen(),
+                        ),
+                      ),
                     );
                   },
                 ),

@@ -1,3 +1,4 @@
+// ignore: file_names
 abstract class SignUpState {}
 
 final class SignUpInitial extends SignUpState {}

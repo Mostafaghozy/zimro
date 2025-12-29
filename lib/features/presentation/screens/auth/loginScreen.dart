@@ -2,7 +2,7 @@ import 'package:zimro/features/presentation/cubit/login/login_cubit.dart';
 import 'package:zimro/features/presentation/screens/auth/signupScreen.dart';
 import 'package:zimro/features/presentation/widgets/auth/ButtonContinueWithEmail.dart';
 import 'package:zimro/features/presentation/widgets/auth/ButtonLoginWith.dart';
-import 'package:zimro/features/presentation/widgets/custom_input_field.dart';
+import 'package:zimro/features/presentation/widgets/auth/custom_input_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

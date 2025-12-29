@@ -9,12 +9,14 @@ class ButtonContinueWithEmail extends StatelessWidget {
     required this.passwordController,
     this.confirmPasswordController,
     this.text,
+    this.isLoading = false,
   });
 
   final TextEditingController emailController;
   final TextEditingController passwordController;
   final TextEditingController? confirmPasswordController;
   final String? text;
+  final bool isLoading;
 
   bool isValidEmail(String email) {
     final emailRegex = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$');

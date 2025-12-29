@@ -1,5 +1,5 @@
 import 'package:zimro/features/presentation/widgets/cart/CustomButtonToCheckout.dart';
-import 'package:zimro/features/presentation/widgets/custom_input_field.dart';
+import 'package:zimro/features/presentation/widgets/auth/custom_input_field.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
