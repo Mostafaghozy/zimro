@@ -2,7 +2,7 @@ import 'package:zimro/features/presentation/cubit/login/login_cubit.dart';
 import 'package:zimro/features/presentation/cubit/sign_up/SignUp_Cubit.dart';
 import 'package:zimro/features/presentation/cubit/sign_up/SignUp_state.dart';
 import 'package:zimro/features/presentation/screens/auth/loginScreen.dart';
-import 'package:zimro/features/presentation/widgets/auth/ButtonContinueWithEmail.dart';
+import 'package:zimro/features/presentation/widgets/auth/ButtonContinueLogin.dart';
 import 'package:zimro/features/presentation/widgets/auth/ButtonLoginWith.dart';
 import 'package:zimro/features/presentation/widgets/auth/ButtonSignUp.dart';
 import 'package:zimro/features/presentation/widgets/auth/PasswordField.dart';
@@ -18,16 +18,22 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
+  final firstNameController = TextEditingController();
+  final lastNameController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
 
+  String? firstNameError;
+  String? lastNameError;
   String? emailError;
   String? passwordError;
   String? confirmPasswordError;
 
   @override
   void dispose() {
+    firstNameController.dispose();
+    lastNameController.dispose();
     emailController.dispose();
     passwordController.dispose();
     confirmPasswordController.dispose();
@@ -77,17 +83,19 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       CustomInputField(
                         width: (MediaQuery.of(context).size.width - 40) / 2,
                         label: 'First Name',
+                        controller: firstNameController,
                         radius: 10,
                         keyboardType: TextInputType.name,
-                        obscureText: true,
+                        obscureText: false,
                       ),
 
                       CustomInputField(
                         width: (MediaQuery.of(context).size.width - 40) / 2,
                         label: 'Last Name',
+                        controller: lastNameController,
                         radius: 10,
                         keyboardType: TextInputType.name,
-                        obscureText: true,
+                        obscureText: false,
                       ),
                     ],
                   ),
@@ -100,10 +108,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     keyboardType: TextInputType.emailAddress,
                   ),
                   const SizedBox(height: 10),
-                  PasswordField(
+                  CustomInputField(
                     label: 'Password',
                     controller: passwordController,
+                    radius: 10,
+                    keyboardType: TextInputType.visiblePassword,
+                    obscureText: true,
+                    errorText: confirmPasswordError,
                   ),
+
                   const SizedBox(height: 10),
                   CustomInputField(
                     label: 'Confirm Password',
@@ -116,17 +129,28 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                   const SizedBox(height: 20),
                   ButtonSignUp(
+                    firstNameController: firstNameController,
+                    lastNameController: lastNameController,
                     emailController: emailController,
                     passwordController: passwordController,
                     confirmPasswordController: confirmPasswordController,
                     isLoading: state is SignUpLoading,
-                    onSignUp: (email, password, confirmPassword) {
-                      context.read<SignUpCubit>().signUp(
-                        email: email,
-                        password: password,
-                        confirmPassword: confirmPassword,
-                      );
-                    },
+                    onSignUp:
+                        (
+                          firstName,
+                          lastName,
+                          email,
+                          password,
+                          confirmPassword,
+                        ) {
+                          context.read<SignUpCubit>().signUp(
+                            firstName: firstName,
+                            lastName: lastName,
+                            email: email,
+                            password: password,
+                            confirmPassword: confirmPassword,
+                          );
+                        },
                   ),
 
                   const SizedBox(height: 10),

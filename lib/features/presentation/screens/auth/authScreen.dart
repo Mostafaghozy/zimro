@@ -27,7 +27,7 @@ class AuthScreen extends StatelessWidget {
                 Text(
                   "The latest clothes \nof the day",
                   style: TextStyle(
-                    color: Colors.grey.shade300,
+                    color: Colors.white,
                     fontSize: 30,
                     fontWeight: FontWeight.w400,
                   ),
@@ -35,7 +35,7 @@ class AuthScreen extends StatelessWidget {
                 SizedBox(height: 10),
                 Text(
                   "A premium online store for Men & women to find their stylish choice.",
-                  style: TextStyle(color: Colors.grey.shade300, fontSize: 16),
+                  style: TextStyle(color: Colors.white, fontSize: 16),
                 ),
               ],
             ),

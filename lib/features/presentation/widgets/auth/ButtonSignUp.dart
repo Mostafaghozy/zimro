@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class ButtonSignUp extends StatelessWidget {
   const ButtonSignUp({
     super.key,
+    required this.firstNameController,
+    required this.lastNameController,
     required this.emailController,
     required this.passwordController,
     required this.confirmPasswordController,
@@ -11,12 +13,20 @@ class ButtonSignUp extends StatelessWidget {
     required this.onSignUp,
   });
 
+  final TextEditingController firstNameController;
+  final TextEditingController lastNameController;
   final TextEditingController emailController;
   final TextEditingController passwordController;
   final TextEditingController confirmPasswordController;
 
   final bool isLoading;
-  final void Function(String email, String password, String confirmPassword)
+  final void Function(
+    String firstName,
+    String lastName,
+    String email,
+    String password,
+    String confirmPassword,
+  )
   onSignUp;
 
   bool isValidEmail(String email) {
@@ -30,11 +40,21 @@ class ButtonSignUp extends StatelessWidget {
       onPressed: isLoading
           ? null
           : () {
+              final firstName = firstNameController.text.trim();
+              final lastName = lastNameController.text.trim();
               final email = emailController.text.trim();
               final password = passwordController.text.trim();
               final confirmPassword = confirmPasswordController.text.trim();
 
               // START VALIDATION
+              if (firstName.isEmpty) {
+                showMsg(context, "Please enter your first name");
+                return;
+              }
+              if (lastName.isEmpty) {
+                showMsg(context, "Please enter your last name");
+                return;
+              }
               if (email.isEmpty) {
                 showMsg(context, "Please enter your email");
                 return;
@@ -62,7 +82,7 @@ class ButtonSignUp extends StatelessWidget {
               // END VALIDATION
 
               // CALL Cubit callback
-              onSignUp(email, password, confirmPassword);
+              onSignUp(firstName, lastName, email, password, confirmPassword);
             },
       style: ElevatedButton.styleFrom(
         backgroundColor: const Color.fromARGB(255, 192, 187, 37),

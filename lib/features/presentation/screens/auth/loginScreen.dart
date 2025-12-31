@@ -1,6 +1,6 @@
 import 'package:zimro/features/presentation/cubit/login/login_cubit.dart';
 import 'package:zimro/features/presentation/screens/auth/signupScreen.dart';
-import 'package:zimro/features/presentation/widgets/auth/ButtonContinueWithEmail.dart';
+import 'package:zimro/features/presentation/widgets/auth/ButtonContinueLogin.dart';
 import 'package:zimro/features/presentation/widgets/auth/ButtonLoginWith.dart';
 import 'package:zimro/features/presentation/widgets/auth/custom_input_field.dart';
 import 'package:flutter/material.dart';
@@ -87,7 +87,7 @@ class _LogInScreenState extends State<LogInScreen> {
                   const SizedBox(height: 20),
                   state is LoginLoading
                       ? const CircularProgressIndicator()
-                      : ButtonContinueWithEmail(
+                      : ButtonContinueLogin(
                           emailController: emailController,
                           passwordController: passwordController,
                         ),

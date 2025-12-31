@@ -2,19 +2,19 @@ import 'package:zimro/features/presentation/cubit/login/login_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class ButtonContinueWithEmail extends StatelessWidget {
-  const ButtonContinueWithEmail({
+class ButtonContinueLogin extends StatelessWidget {
+  const ButtonContinueLogin({
     super.key,
     required this.emailController,
     required this.passwordController,
-    this.confirmPasswordController,
+
     this.text,
     this.isLoading = false,
   });
 
   final TextEditingController emailController;
   final TextEditingController passwordController;
-  final TextEditingController? confirmPasswordController;
+
   final String? text;
   final bool isLoading;
 
@@ -29,7 +29,6 @@ class ButtonContinueWithEmail extends StatelessWidget {
       onPressed: () {
         final email = emailController.text.trim();
         final password = passwordController.text.trim();
-        final confirmPassword = confirmPasswordController?.text.trim();
 
         // START VALIDATION -------------------------------
 
@@ -52,20 +51,6 @@ class ButtonContinueWithEmail extends StatelessWidget {
           showMsg(context, "Password must be at least 8 characters");
           return;
         }
-
-        if (confirmPasswordController != null) {
-          if (confirmPassword!.isEmpty) {
-            showMsg(context, "Please confirm your password");
-            return;
-          }
-
-          if (password != confirmPassword) {
-            showMsg(context, "Passwords do not match");
-            return;
-          }
-        }
-
-        // END VALIDATION --------------------------------
 
         // CALL Cubit after validation success
         context.read<LoginCubit>().logIn(email: email, password: password);

@@ -11,6 +11,8 @@ class SignUpCubit extends Cubit<SignUpState> {
   Future<void> signUp({
     required String email,
     required String password,
+    required String firstName,
+    required String lastName,
     required String confirmPassword,
   }) async {
     try {
@@ -20,8 +22,8 @@ class SignUpCubit extends Cubit<SignUpState> {
         email: email,
         password: password,
         confirmPassword: confirmPassword,
-        firstName: "User",
-        lastName: "User",
+        firstName: firstName,
+        lastName: lastName,
       );
 
       await Dio().post(
@@ -38,8 +40,13 @@ class SignUpCubit extends Cubit<SignUpState> {
             errorResponse?['errors']?.toString() ??
             'Unknown error occurred';
 
+        print(' SignUp Error: $errorMessage');
+        print(' Full Response: $errorResponse');
+        print(' Status Code: ${e.response?.statusCode}');
+
         emit(SignUpFailure(errMessage: errorMessage));
       } else {
+        print('SignUp Unexpected Error: ${e.toString()}');
         emit(SignUpFailure(errMessage: e.toString()));
       }
     }
