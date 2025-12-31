@@ -1,5 +1,5 @@
 /// Testing Examples for Clean Architecture Implementation
-/// 
+///
 /// These are example test cases for the SignUp feature.
 /// To use them, add `test` and `mockito` to your pubspec.yaml:
 /// dev_dependencies:
@@ -30,63 +30,63 @@ void main() {
         useCase = SignUpUseCase(mockRepository);
       });
 
-      test(
-        'should call repository.signUp with correct parameters',
-        () async {
-          // Arrange
-          when(mockRepository.signUp(
+      test('should call repository.signUp with correct parameters', () async {
+        // Arrange
+        when(
+          mockRepository.signUp(
             email: anyNamed('email'),
             password: anyNamed('password'),
             firstName: anyNamed('firstName'),
             lastName: anyNamed('lastName'),
             confirmPassword: anyNamed('confirmPassword'),
-          )).thenAnswer((_) async {});
+          ),
+        ).thenAnswer((_) async {});
 
-          // Act
-          await useCase(
+        // Act
+        await useCase(
+          email: 'test@example.com',
+          password: 'password123',
+          firstName: 'John',
+          lastName: 'Doe',
+          confirmPassword: 'password123',
+        );
+
+        // Assert
+        verify(
+          mockRepository.signUp(
             email: 'test@example.com',
             password: 'password123',
             firstName: 'John',
             lastName: 'Doe',
             confirmPassword: 'password123',
-          );
+          ),
+        ).called(1);
+      });
 
-          // Assert
-          verify(mockRepository.signUp(
-            email: 'test@example.com',
-            password: 'password123',
-            firstName: 'John',
-            lastName: 'Doe',
-            confirmPassword: 'password123',
-          )).called(1);
-        },
-      );
-
-      test(
-        'should propagate exception from repository',
-        () async {
-          // Arrange
-          when(mockRepository.signUp(
+      test('should propagate exception from repository', () async {
+        // Arrange
+        when(
+          mockRepository.signUp(
             email: anyNamed('email'),
             password: anyNamed('password'),
             firstName: anyNamed('firstName'),
             lastName: anyNamed('lastName'),
             confirmPassword: anyNamed('confirmPassword'),
-          )).thenThrow(Exception('Network error'));
+          ),
+        ).thenThrow(Exception('Network error'));
 
-          // Act & Assert
-          expect(
-            () => useCase(
-              email: 'test@example.com',
-              password: 'password123',
-              firstName: 'John',
-              lastName: 'Doe',
-              confirmPassword: 'password123',
-            ),
-            throwsException,
-          );
-        },
-      );
+        // Act & Assert
+        expect(
+          () => useCase(
+            email: 'test@example.com',
+            password: 'password123',
+            firstName: 'John',
+            lastName: 'Doe',
+            confirmPassword: 'password123',
+          ),
+          throwsException,
+        );
+      });
     });
 
     /// DATA LAYER TESTS - Repository
@@ -99,63 +99,63 @@ void main() {
         repository = AuthRepositoryImpl(mockDataSource);
       });
 
-      test(
-        'should call dataSource.signUp with same parameters',
-        () async {
-          // Arrange
-          when(mockDataSource.signUp(
+      test('should call dataSource.signUp with same parameters', () async {
+        // Arrange
+        when(
+          mockDataSource.signUp(
             email: anyNamed('email'),
             password: anyNamed('password'),
             firstName: anyNamed('firstName'),
             lastName: anyNamed('lastName'),
             confirmPassword: anyNamed('confirmPassword'),
-          )).thenAnswer((_) async {});
+          ),
+        ).thenAnswer((_) async {});
 
-          // Act
-          await repository.signUp(
+        // Act
+        await repository.signUp(
+          email: 'test@example.com',
+          password: 'password123',
+          firstName: 'John',
+          lastName: 'Doe',
+          confirmPassword: 'password123',
+        );
+
+        // Assert
+        verify(
+          mockDataSource.signUp(
             email: 'test@example.com',
             password: 'password123',
             firstName: 'John',
             lastName: 'Doe',
             confirmPassword: 'password123',
-          );
+          ),
+        ).called(1);
+      });
 
-          // Assert
-          verify(mockDataSource.signUp(
-            email: 'test@example.com',
-            password: 'password123',
-            firstName: 'John',
-            lastName: 'Doe',
-            confirmPassword: 'password123',
-          )).called(1);
-        },
-      );
-
-      test(
-        'should rethrow exception from dataSource',
-        () async {
-          // Arrange
-          when(mockDataSource.signUp(
+      test('should rethrow exception from dataSource', () async {
+        // Arrange
+        when(
+          mockDataSource.signUp(
             email: anyNamed('email'),
             password: anyNamed('password'),
             firstName: anyNamed('firstName'),
             lastName: anyNamed('lastName'),
             confirmPassword: anyNamed('confirmPassword'),
-          )).thenThrow(Exception('API error'));
+          ),
+        ).thenThrow(Exception('API error'));
 
-          // Act & Assert
-          expect(
-            () => repository.signUp(
-              email: 'test@example.com',
-              password: 'password123',
-              firstName: 'John',
-              lastName: 'Doe',
-              confirmPassword: 'password123',
-            ),
-            throwsException,
-          );
-        },
-      );
+        // Act & Assert
+        expect(
+          () => repository.signUp(
+            email: 'test@example.com',
+            password: 'password123',
+            firstName: 'John',
+            lastName: 'Doe',
+            confirmPassword: 'password123',
+          ),
+          throwsException,
+        );
+      });
     });
 
     /// PRESENTATION LAYER TESTS - Would require flutter_bloc_test

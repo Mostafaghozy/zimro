@@ -42,35 +42,85 @@ A sophisticated cross-platform e-commerce solution built with Flutter, deliverin
 
 ```
 lib/
-  core/
-    theme.dart                # AppThemes (light/dark), typography/colors
-  features/
-      data/
-            model/
-              productModel.dart       # Product entity with copyWith
-            services/
-              ProductDataService.dart # In‑memory product data and selectors
-      presention/
-            screens/                  # Feature screens grouped by domain (home, cart, ...)
-                  home/
-                    MainScreen.dart       # Tab scaffold and navigation
-                    homeScreen.dart       # Home composition using widgets
-                  payment/                # Payment screens (PayPal, Credit Card, Orders)
-      ...
-    widgets/                  # Reusable UI components
-            CustomBottomNavBar.dart # Navigation bar
-            ProductCardComponent.dart
-            HorizontalProductList.dart
-            ProductGridSection.dart
-      ...
-main.dart                     # App entry: MaterialApp, theming, initial route
-SplashScreen.dart
+├── main.dart                              # App entry point: MaterialApp, theming, routes
+├── SplashScreen.dart                      # Splash screen widget
+├── test.json                              # Test data file
+│
+├── core/                                  # Core application layer
+│   ├── api_keys.dart                      # API configuration and keys
+│   ├── theme.dart                         # AppThemes (light/dark), typography, colors
+│   ├── di/                                # Dependency injection setup
+│   └── errors/                            # Error handling and exceptions
+│
+└── features/                              # Feature modules (Clean Architecture)
+    ├── data/                              # Data layer
+    │   ├── model/                         # Data models
+    │   │   └── productModel.dart          # Product entity with copyWith
+    │   └── services/                      # Data services
+    │       └── ProductDataService.dart    # In-memory product data and selectors
+    │
+    ├── domain/                            # Domain layer (business logic)
+    │   ├── entities/                      # Entity definitions
+    │   ├── repositories/                  # Repository interfaces
+    │   └── usecases/                      # Use case implementations
+    │
+    └── presentation/                      # Presentation layer (UI)
+        ├── cubit/                         # State management (BLoC/Cubit)
+        │   ├── login/                     # Login cubit and states
+        │   ├── sign_up/                   # Sign-up cubit and states
+        │   └── [other cubits]/            # Additional feature cubits
+        │
+        ├── screens/                       # Feature screens organized by domain
+        │   ├── auth/                      # Authentication screens
+        │   │   ├── loginScreen.dart       # Login screen
+        │   │   ├── signUpScreen.dart      # Sign-up screen
+        │   │   └── [auth screens]/        # Other auth-related screens
+        │   ├── home/                      # Home feature screens
+        │   │   ├── MainScreen.dart        # Tab scaffold and navigation
+        │   │   ├── homeScreen.dart        # Home composition using widgets
+        │   │   └── [home screens]/        # Other home-related screens
+        │   ├── payment/                   # Payment feature screens
+        │   │   ├── PayPalScreen.dart      # PayPal payment screen
+        │   │   ├── CreditCardScreen.dart  # Credit card payment screen
+        │   │   └── OrdersScreen.dart      # Orders and transaction history
+        │   └── [other features]/          # Additional feature screens
+        │
+        └── widgets/                       # Reusable UI components
+            ├── CustomBottomNavBar.dart    # Bottom navigation bar
+            ├── ProductCardComponent.dart  # Product card widget
+            ├── HorizontalProductList.dart # Horizontal scrollable product list
+            ├── ProductGridSection.dart    # Product grid display
+            │
+            ├── auth/                      # Authentication-specific widgets
+            │   ├── ButtonSignUp.dart      # Sign-up button
+            │   ├── ButtonLoginWith.dart   # Social login button
+            │   ├── ButtonContinueLogin.dart # Continue login button
+            │   ├── CustomInputField.dart  # Custom text input field
+            │   ├── PasswordField.dart     # Password input field
+            │   ├── RowFirstAndLastName.dart # First/last name row input
+            │   ├── AlreadyHaveAccountRow.dart # "Already have account?" section
+            │   ├── TermsAndPrivacyText.dart # Terms and privacy text
+            │   └── [auth widgets]/        # Other auth-specific widgets
+            │
+            └── [other widgets]/           # Other feature-specific widgets
+
+
+assets/                                    # Static assets
+├── icons/                                 # Icon assets
+├── all_product/                           # Product images
+└── pay/                                   # Payment-related images
+
+fonts/                                     # Custom fonts
+
+pubspec.yaml                               # Dart package configuration
+analysis_options.yaml                      # Lint rules configuration
+devtools_options.yaml                      # DevTools configuration
 ```
 
-Assets and fonts are configured in `pubspec.yaml`:
+### Key Directory Descriptions
 
-- Assets: `assets/`, `assets/icons/`,
-- Fonts: Jost (Regular, Bold)
+- **`assets/`** - Images, icons, and other static resources
+- **`fonts/`** - Custom typography (Jost font family)
 
 ---
 

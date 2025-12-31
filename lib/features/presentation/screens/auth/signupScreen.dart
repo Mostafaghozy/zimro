@@ -2,10 +2,13 @@ import 'package:zimro/features/presentation/cubit/login/login_cubit.dart';
 import 'package:zimro/features/presentation/cubit/sign_up/SignUp_Cubit.dart';
 import 'package:zimro/features/presentation/cubit/sign_up/SignUp_state.dart';
 import 'package:zimro/features/presentation/screens/auth/loginScreen.dart';
+import 'package:zimro/features/presentation/widgets/auth/AlreadyHaveAccountRow.dart';
 import 'package:zimro/features/presentation/widgets/auth/ButtonContinueLogin.dart';
 import 'package:zimro/features/presentation/widgets/auth/ButtonLoginWith.dart';
 import 'package:zimro/features/presentation/widgets/auth/ButtonSignUp.dart';
 import 'package:zimro/features/presentation/widgets/auth/PasswordField.dart';
+import 'package:zimro/features/presentation/widgets/auth/RowFirstAndLastName.dart';
+import 'package:zimro/features/presentation/widgets/auth/TermsAndPrivacyText.dart';
 import 'package:zimro/features/presentation/widgets/auth/custom_input_field.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -77,27 +80,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   Center(child: Image.asset('assets/logo.png')),
                   const SizedBox(height: 60),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      CustomInputField(
-                        width: (MediaQuery.of(context).size.width - 40) / 2,
-                        label: 'First Name',
-                        controller: firstNameController,
-                        radius: 10,
-                        keyboardType: TextInputType.name,
-                        obscureText: false,
-                      ),
-
-                      CustomInputField(
-                        width: (MediaQuery.of(context).size.width - 40) / 2,
-                        label: 'Last Name',
-                        controller: lastNameController,
-                        radius: 10,
-                        keyboardType: TextInputType.name,
-                        obscureText: false,
-                      ),
-                    ],
+                  RowFirstAndLastName(
+                    firstNameController: firstNameController,
+                    lastNameController: lastNameController,
                   ),
                   const SizedBox(height: 10),
 
@@ -154,33 +139,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
 
                   const SizedBox(height: 10),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Already use zimro?",
-                        style: TextStyle(color: Colors.grey[600]),
-                      ),
-
-                      TextButton(
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => BlocProvider(
-                                create: (context) => LoginCubit(),
-                                child: LogInScreen(),
-                              ),
-                            ),
-                          );
-                        },
-                        child: Text(
-                          "Log in",
-                          style: TextStyle(color: Color(0xff979423)),
-                        ),
-                      ),
-                    ],
-                  ),
+                  const AlreadyHaveAccountRow(),
                   const SizedBox(height: 15),
                   ButtonLoginWith(
                     icon: const Icon(
@@ -202,28 +161,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     onPressed: () {},
                   ),
                   SizedBox(height: 30),
-                  Center(
-                    child: RichText(
-                      textAlign: TextAlign.center,
-                      text: TextSpan(
-                        style: TextStyle(color: Colors.grey[600], fontSize: 12),
-                        children: const [
-                          TextSpan(text: 'By signing up you accept the '),
-                          TextSpan(
-                            text: '\nTerm of service',
-                            style: TextStyle(color: Color(0xff979423)),
-                            // recognizer: TapGestureRecognizer()..onTap = () => launch('URL'),
-                          ),
-                          TextSpan(text: ' and '),
-                          TextSpan(
-                            text: 'Privacy Policy',
-                            style: TextStyle(color: Color(0xff979423)),
-                            // recognizer: TapGestureRecognizer()..onTap = () => launch('URL'),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  const TermsAndPrivacyText(),
                 ],
               ),
             ),
