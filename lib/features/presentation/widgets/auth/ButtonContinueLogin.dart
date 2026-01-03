@@ -7,7 +7,6 @@ class ButtonContinueLogin extends StatelessWidget {
     super.key,
     required this.emailController,
     required this.passwordController,
-
     this.text,
     this.isLoading = false,
   });

@@ -1,5 +1,6 @@
 import 'package:zimro/core/api_keys.dart';
 import 'package:zimro/core/theme.dart';
+import 'package:zimro/features/presentation/screens/auth/VerifyEmailScreen.dart';
 import 'package:zimro/features/presentation/screens/auth/authScreen.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/foundation.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
       title: 'Fashion App',
       themeMode: ThemeMode.dark,
       darkTheme: AppThemes.dark,
-      home: AuthScreen(),
+      home: VerifyEmailScreen(),
     );
   }
 }
