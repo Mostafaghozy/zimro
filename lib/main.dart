@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
       title: 'Fashion App',
       themeMode: ThemeMode.dark,
       darkTheme: AppThemes.dark,
-      home: VerifyEmailScreen(),
+      home: AuthScreen(),
     );
   }
 }

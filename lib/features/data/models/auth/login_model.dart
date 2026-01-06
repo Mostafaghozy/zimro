@@ -1,13 +1,19 @@
-class Login {
+import 'package:zimro/core/api/end_points.dart';
+import 'package:zimro/core/api_keys.dart';
+
+class LoginModel {
   String? email;
   String? password;
 
-  Login({this.email, this.password});
+  LoginModel({this.email, this.password});
 
-  factory Login.fromJson(Map<String, dynamic> json) => Login(
-    email: json['email'] as String?,
-    password: json['password'] as String?,
+  factory LoginModel.fromJson(Map<String, dynamic> json) => LoginModel(
+    email: json[LoginApiKey.email] as String?,
+    password: json[LoginApiKey.password] as String?,
   );
 
-  Map<String, dynamic> toJson() => {'email': email, 'password': password};
+  Map<String, dynamic> toJson() => {
+    LoginApiKey.email: email,
+    LoginApiKey.password: password,
+  };
 }

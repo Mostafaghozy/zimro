@@ -1,3 +1,4 @@
+import 'package:zimro/core/api/end_points.dart';
 import 'package:zimro/features/presentation/cubit/login/login_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -29,8 +30,6 @@ class ButtonContinueLogin extends StatelessWidget {
         final email = emailController.text.trim();
         final password = passwordController.text.trim();
 
-        // START VALIDATION -------------------------------
-
         if (email.isEmpty) {
           showMsg(context, "Please enter your email");
           return;
@@ -51,9 +50,9 @@ class ButtonContinueLogin extends StatelessWidget {
           return;
         }
 
-        // CALL Cubit after validation success
         context.read<LoginCubit>().logIn(email: email, password: password);
       },
+
       style: ElevatedButton.styleFrom(
         backgroundColor: const Color.fromARGB(255, 192, 187, 37),
         minimumSize: const Size(double.infinity, 50),

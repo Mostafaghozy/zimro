@@ -1,3 +1,5 @@
+import 'package:dio/dio.dart';
+import 'package:zimro/core/api/dio_consumer.dart';
 import 'package:zimro/features/presentation/cubit/login/login_cubit.dart';
 import 'package:zimro/features/presentation/cubit/sign_up/SignUp_Cubit.dart';
 import 'package:zimro/features/presentation/widgets/imageCustom.dart';
@@ -53,7 +55,7 @@ class AuthScreen extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) => BlocProvider(
-                          create: (_) => SignUpCubit(),
+                          create: (_) => SignUpCubit(DioConsumer(dio: Dio())),
                           child: SignUpScreen(),
                         ),
                       ),
@@ -68,7 +70,7 @@ class AuthScreen extends StatelessWidget {
                       context,
                       MaterialPageRoute(
                         builder: (context) => BlocProvider(
-                          create: (_) => LoginCubit(),
+                          create: (_) => LoginCubit(DioConsumer(dio: Dio())),
                           child: LogInScreen(),
                         ),
                       ),

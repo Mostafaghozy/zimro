@@ -1,3 +1,6 @@
+import 'package:zimro/core/api/end_points.dart';
+import 'package:zimro/core/api_keys.dart';
+
 class ErrorModel {
   final int statusCode;
   final String message;
@@ -11,9 +14,9 @@ class ErrorModel {
 
   factory ErrorModel.fromJson(Map<String, dynamic> jsonData) {
     return ErrorModel(
-      statusCode: jsonData['statusCode'],
-      message: jsonData['message'],
-      errors: jsonData['errors'],
+      statusCode: jsonData[LoginApiKey.statusCode],
+      message: jsonData[LoginApiKey.message],
+      errors: jsonData[LoginApiKey.errors],
     );
   }
 }

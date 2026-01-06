@@ -1,4 +1,9 @@
+import 'package:dio/dio.dart';
+import 'package:zimro/core/api/api_consumer.dart';
+import 'package:zimro/core/api/dio_consumer.dart';
 import 'package:zimro/features/presentation/cubit/login/login_cubit.dart';
+import 'package:zimro/features/presentation/cubit/login/login_state.dart';
+import 'package:zimro/features/presentation/cubit/sign_up/SignUp_Cubit.dart';
 import 'package:zimro/features/presentation/screens/auth/signupScreen.dart';
 import 'package:zimro/features/presentation/widgets/auth/ButtonContinueLogin.dart';
 import 'package:zimro/features/presentation/widgets/auth/ButtonLoginWith.dart';
@@ -103,10 +108,14 @@ class _LogInScreenState extends State<LogInScreen> {
 
                       TextButton(
                         onPressed: () {
-                          Navigator.push(
+                          Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => SignUpScreen(),
+                              builder: (context) => BlocProvider(
+                                create: (_) =>
+                                    SignUpCubit(DioConsumer(dio: Dio())),
+                                child: SignUpScreen(),
+                              ),
                             ),
                           );
                         },

@@ -1,3 +1,5 @@
+import 'package:zimro/core/api_keys.dart';
+
 class SignUpModel {
   String? email;
   String? password;
@@ -14,18 +16,18 @@ class SignUpModel {
   });
 
   factory SignUpModel.fromJson(Map<String, dynamic> json) => SignUpModel(
-    email: json['email'] as String?,
-    password: json['password'] as String?,
-    confirmPassword: json['confirmPassword'] as String?,
-    firstName: json['firstName'] as String?,
-    lastName: json['lastName'] as String?,
+    email: json[SignUpApiKey.email] as String?,
+    password: json[SignUpApiKey.password] as String?,
+    confirmPassword: json[SignUpApiKey.confirmPassword] as String?,
+    firstName: json[SignUpApiKey.firstName] as String?,
+    lastName: json[SignUpApiKey.lastName] as String?,
   );
 
   Map<String, dynamic> toJson() => {
-    'email': email,
-    'password': password,
-    'confirmPassword': confirmPassword,
-    'firstName': firstName,
-    'lastName': lastName,
+    SignUpApiKey.email: email,
+    SignUpApiKey.password: password,
+    SignUpApiKey.confirmPassword: confirmPassword,
+    SignUpApiKey.firstName: firstName,
+    SignUpApiKey.lastName: lastName,
   };
 }

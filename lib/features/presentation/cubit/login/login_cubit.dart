@@ -1,26 +1,29 @@
-import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:zimro/core/api/api_consumer.dart';
+import 'package:zimro/core/api/end_points.dart';
+import 'package:zimro/core/api_keys.dart';
 import 'package:zimro/features/data/models/auth/login_model.dart';
+import 'package:zimro/features/presentation/cubit/login/login_state.dart';
 
-part 'login_state.dart';
+import 'login_state.dart';
 
 class LoginCubit extends Cubit<LoginState> {
-  LoginCubit() : super(LoginInitial());
+  LoginCubit(this.api) : super(LoginInitial());
+
+  final ApiConsumer api;
 
   Future<void> logIn({required String email, required String password}) async {
-    try {
-      emit(LoginLoading());
-      final loginModel = Login(email: email, password: password);
+    emit(LoginLoading());
 
-      final response = await Dio().post(
-        "https://accessories-eshop.runasp.net/api/auth/login",
-        data: loginModel.toJson(),
+    try {
+      final response = await api.post(
+        EndPoints.login,
+        data: {LoginApiKey.email: email, LoginApiKey.password: password},
       );
       emit(LoginSuccess());
-      print(response);
+      return response;
     } catch (e) {
-      emit(LoginFailure(errMessage: e.toString()));
-      print(e.toString());
+      emit(LoginFailure(e.toString(), errMessage: e.toString()));
     }
   }
 }
