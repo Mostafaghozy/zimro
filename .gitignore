@@ -43,8 +43,8 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
-lib/test.json
 lib/core/api_keys.dart
+
 
 
 .fvm

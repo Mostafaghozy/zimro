@@ -4,4 +4,5 @@ class EndPoints {
   static String register = "auth/register";
   static String verifyEmail = "auth/verify-email";
   static String resendOtp = "auth/resend-otp";
+  static String me = "auth/me";
 }

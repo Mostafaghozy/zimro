@@ -11,7 +11,6 @@ import 'package:zimro/features/presentation/cubit/sign_up/SignUp_state.dart';
 class SignUpCubit extends Cubit<SignUpState> {
   SignUpCubit(this.api) : super(SignUpInitial());
   final ApiConsumer api;
-
   Future<void> signUp({
     required String email,
     required String password,

@@ -1,3 +1,4 @@
+import 'package:zimro/cache/cache_helper.dart';
 import 'package:zimro/core/api_keys.dart';
 import 'package:zimro/core/theme.dart';
 import 'package:zimro/features/presentation/screens/auth/VerifyEmailScreen.dart';
@@ -9,7 +10,7 @@ import 'package:flutter_stripe/flutter_stripe.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+  CacheHelper().init();
   if (!kIsWeb) {
     Stripe.publishableKey = ApiKeys.publishableKey;
   }
