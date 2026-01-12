@@ -4,7 +4,7 @@ import 'package:zimro/core/api_keys.dart';
 class ErrorModel {
   final int statusCode;
   final String message;
-  final String errors;
+  final dynamic errors;
 
   ErrorModel({
     required this.statusCode,

@@ -2,7 +2,6 @@ import 'package:dio/dio.dart';
 import 'package:zimro/core/api/api_consumer.dart';
 import 'package:zimro/core/api/api_interceptors.dart';
 import 'package:zimro/core/api/end_points.dart';
-import 'package:zimro/core/errors/error_model.dart';
 import 'package:zimro/core/errors/exception.dart';
 import 'package:zimro/features/presentation/cubit/login/login_state.dart';
 
@@ -96,8 +95,6 @@ class DioConsumer extends ApiConsumer {
     } on DioException catch (e) {
       handleDioExceptions(e);
       rethrow;
-    } on ServerException catch (e) {
-      throw LoginFailure(e.errorModel.errors, errMessage: e.errorModel.errors);
     }
   }
 }

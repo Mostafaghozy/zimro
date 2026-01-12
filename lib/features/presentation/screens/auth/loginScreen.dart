@@ -5,9 +5,11 @@ import 'package:zimro/features/presentation/cubit/login/login_cubit.dart';
 import 'package:zimro/features/presentation/cubit/login/login_state.dart';
 import 'package:zimro/features/presentation/cubit/sign_up/SignUp_Cubit.dart';
 import 'package:zimro/features/presentation/screens/auth/signupScreen.dart';
+import 'package:zimro/features/presentation/screens/home/homeScreen.dart';
 import 'package:zimro/features/presentation/widgets/auth/ButtonContinueLogin.dart';
 import 'package:zimro/features/presentation/widgets/auth/ButtonLoginWith.dart';
 import 'package:zimro/features/presentation/widgets/auth/custom_input_field.dart';
+import 'package:zimro/features/presentation/widgets/auth/error_snack_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -36,13 +38,12 @@ class _LogInScreenState extends State<LogInScreen> {
     return BlocConsumer<LoginCubit, LoginState>(
       listener: (context, state) {
         if (state is LoginSuccess) {
-          ScaffoldMessenger.of(
+          Navigator.push(
             context,
-          ).showSnackBar(SnackBar(content: Text(("success"))));
+            MaterialPageRoute(builder: (context) => HomeScreen()),
+          );
         } else if (state is LoginFailure) {
-          ScaffoldMessenger.of(
-            context,
-          ).showSnackBar(SnackBar(content: Text((state.errMessage))));
+          ErrorSnackBar.show(context, state.errMessage);
         }
       },
       builder: (context, state) {

@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:zimro/core/api/api_consumer.dart';
 import 'package:zimro/core/api/end_points.dart';
 import 'package:zimro/core/api_keys.dart';
+import 'package:zimro/core/errors/exception.dart';
 import 'package:zimro/features/data/models/auth/login_model.dart';
 import 'package:zimro/features/presentation/cubit/login/login_state.dart';
 
@@ -22,8 +23,12 @@ class LoginCubit extends Cubit<LoginState> {
       );
       emit(LoginSuccess());
       return response;
-    } catch (e) {
-      emit(LoginFailure(e.toString(), errMessage: e.toString()));
+    } on ServerException catch (e) {
+      emit(
+        LoginFailure(
+          errMessage: e.errorModel.errors?.toString() ?? e.errorModel.message,
+        ),
+      );
     }
   }
 }
