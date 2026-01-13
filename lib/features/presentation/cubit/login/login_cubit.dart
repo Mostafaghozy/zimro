@@ -26,11 +26,11 @@ class LoginCubit extends Cubit<LoginState> {
       emit(LoginSuccess());
       user = LoginModel.fromJson(response);
       final decodedToken = JwtDecoder.decode(user!.accessToken!);
-      CacheHelper().saveData(
+      CacheHelper.saveData(
         key: LoginApiKey.accessToken,
         value: user!.accessToken!,
       );
-      CacheHelper().saveData(
+      CacheHelper.saveData(
         key: UserApiKey.userId,
         value: decodedToken[UserApiKey.userId],
       );

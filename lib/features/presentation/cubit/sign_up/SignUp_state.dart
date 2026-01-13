@@ -7,8 +7,10 @@ final class SignUpLoading extends SignUpState {}
 
 final class SignUpSuccess extends SignUpState {}
 
+class SignUpImagePicked extends SignUpState {}
+
 final class SignUpFailure extends SignUpState {
   final String errMessage;
 
-  SignUpFailure(String string, {required this.errMessage});
+  SignUpFailure({required this.errMessage});
 }

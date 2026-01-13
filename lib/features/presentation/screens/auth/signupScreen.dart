@@ -1,3 +1,4 @@
+import 'package:image_picker/image_picker.dart';
 import 'package:zimro/features/presentation/cubit/login/login_cubit.dart';
 import 'package:zimro/features/presentation/cubit/sign_up/SignUp_Cubit.dart';
 import 'package:zimro/features/presentation/cubit/sign_up/SignUp_state.dart';
@@ -7,6 +8,7 @@ import 'package:zimro/features/presentation/widgets/auth/ButtonContinueLogin.dar
 import 'package:zimro/features/presentation/widgets/auth/ButtonLoginWith.dart';
 import 'package:zimro/features/presentation/widgets/auth/ButtonSignUp.dart';
 import 'package:zimro/features/presentation/widgets/auth/PasswordField.dart';
+import 'package:zimro/features/presentation/widgets/auth/PickImageWidget.dart';
 import 'package:zimro/features/presentation/widgets/auth/RowFirstAndLastName.dart';
 import 'package:zimro/features/presentation/widgets/auth/TermsAndPrivacyText.dart';
 import 'package:zimro/features/presentation/widgets/auth/custom_input_field.dart';
@@ -78,7 +80,15 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       Navigator.pop(context);
                     },
                   ),
-                  Center(child: Image.asset('assets/logo.png')),
+                  Center(
+                    child: PickImageWidget(
+                      imageFile: context.read<SignUpCubit>().profilePic,
+                      onImagePicked: (XFile file) {
+                        context.read<SignUpCubit>().pickProfileImage(file);
+                      },
+                    ),
+                  ),
+
                   const SizedBox(height: 60),
                   RowFirstAndLastName(
                     firstNameController: firstNameController,
